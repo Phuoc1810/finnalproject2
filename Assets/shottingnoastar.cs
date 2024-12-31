@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class shottingnoastar : MonoBehaviour
 {
+    public float maxhealth = 30;
     public float health;
+    public hearbar healthbar;
 
 
     private Animator anim;
@@ -14,6 +16,8 @@ public class shottingnoastar : MonoBehaviour
     public GameObject Point;
     private void Start()
     {
+        health = maxhealth;
+        healthbar.sethealth(health, maxhealth);
         Point = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
     }
@@ -29,6 +33,7 @@ public class shottingnoastar : MonoBehaviour
             enemymove.position = new Vector2(enemymove.position.x - 0.5f, enemymove.position.y);
         anim.SetTrigger("hurt");
         health -= damge;
+        healthbar.sethealth(health, maxhealth);
         enemy.speed = 0;
 
         if (health < 0)
