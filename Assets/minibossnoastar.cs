@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class minibossnoastar : MonoBehaviour
 {
+    public float maxhealth = 50;
     public float health;
+    public hearbar healthbar;
     public GameObject chest_Perfab;
     public GameObject wall;
 
@@ -15,6 +17,9 @@ public class minibossnoastar : MonoBehaviour
 
     private void Start()
     {
+
+        health = maxhealth;
+        healthbar.sethealth(health, maxhealth);
         Point = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
         chest_Perfab.SetActive(false);
@@ -33,7 +38,7 @@ public class minibossnoastar : MonoBehaviour
         anim.SetTrigger("hurt");
         health -= damge;
         boss.speed = 0;
-        
+        healthbar.sethealth(health, maxhealth);
 
         if (health < 0)
         {

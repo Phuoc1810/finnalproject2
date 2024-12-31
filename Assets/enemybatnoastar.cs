@@ -24,7 +24,7 @@ public class enemybatnoastar : MonoBehaviour
     public void takedamage(float damge)
     {
         enemy = GetComponent<enemyfollowbat>();
-        healthbar.sethealth(health, maxhealth);
+        
 
         if (transform.localScale.x == -1f)
             enemymove.position = new Vector2(enemymove.position.x + 0.5f, enemymove.position.y);
@@ -32,6 +32,7 @@ public class enemybatnoastar : MonoBehaviour
             enemymove.position = new Vector2(enemymove.position.x - 0.5f, enemymove.position.y);
         anim.SetTrigger("hurt");
         health -= damge;
+        healthbar.sethealth(health, maxhealth);
         enemy.speed = 0;
 
         if (health < 0)

@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.1741, y: 0.3914}
-  m_SizeDelta: {x: 98.1633, y: 19.2173}
+  m_AnchoredPosition: {x: -4.9634, y: 0.2692}
+  m_SizeDelta: {x: 74.45, y: 19.4618}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4203806835465004102
 MonoBehaviour:
@@ -348,7 +348,7 @@ MonoBehaviour:
   slider: {fileID: 4203806835465004102}
   low: {r: 0.96981126, g: 0.027447322, b: 0.027447322, a: 1}
   hight: {r: 0, g: 0.9924528, b: 0.020598056, a: 1}
-  offset: {x: 0, y: 1, z: 0}
+  offset: {x: 0, y: 1.5, z: 0}
 --- !u!223 &6124043914678643507
 Canvas:
   m_ObjectHideFlags: 0
