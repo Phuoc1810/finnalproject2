@@ -7,12 +7,14 @@ public class RoomLock : MonoBehaviour
     public GameObject nightBorne; //tham chieu den enemy
     public GameObject lockDoor;
     public GameObject unlockDoor;
+    public GameObject funtionWall;
     // Start is called before the first frame update
     void Start()
     {
         nightBorne.SetActive(false);
         lockDoor.SetActive(false);
-        unlockDoor.SetActive(true);
+        unlockDoor.SetActive(false);
+        funtionWall.SetActive(true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -20,6 +22,7 @@ public class RoomLock : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             StartCoroutine(NightBorne());
+            StartCoroutine(FuntionHide());
         }
     }
 
@@ -34,6 +37,7 @@ public class RoomLock : MonoBehaviour
     {
         yield return new WaitForSeconds(4);
         Destroy(lockDoor);
-        unlockDoor.SetActive(false);
+        unlockDoor.SetActive(true);
+        funtionWall.SetActive(false);
     }
 }

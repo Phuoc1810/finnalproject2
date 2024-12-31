@@ -63,6 +63,7 @@ public class BossController : MonoBehaviour
     {
         Debug.Log("Attack sequence started");
         StartCoroutine(BossStart());
+
     }
 
     private IEnumerator BossStart()
