@@ -6,6 +6,7 @@ public class minibossnoastar : MonoBehaviour
 {
     public float health;
     public GameObject chest_Perfab;
+    public GameObject wall;
 
     private Animator anim;
     public Transform enemymove;
@@ -17,6 +18,7 @@ public class minibossnoastar : MonoBehaviour
         Point = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
         chest_Perfab.SetActive(false);
+        wall.SetActive(true);
     }
 
     public void takedamage(float damge)
@@ -65,5 +67,6 @@ public class minibossnoastar : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         chest_Perfab.SetActive(true);
+        wall.SetActive(false);
     }
 }

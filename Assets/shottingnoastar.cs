@@ -12,10 +12,13 @@ public class shottingnoastar : MonoBehaviour
 
     public SHOOTINGPLAYER enemy;
     public GameObject Point;
+
+    public GameObject chest_Perfab;
     private void Start()
     {
         Point = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
+        chest_Perfab.SetActive(false);
     }
 
     public void takedamage(float damge)
@@ -34,7 +37,7 @@ public class shottingnoastar : MonoBehaviour
         if (health < 0)
         {
             anim.SetTrigger("die");
-
+            chest_Perfab.SetActive(true);
         }
         Debug.Log("takedamge");
     }
