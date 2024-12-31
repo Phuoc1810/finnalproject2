@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/sprite/Scenes/map 1.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/PLAYER/Script/Scenes/Remake/Map01.unity
+    guid: 6984f7f5f9472e444a31f149d65c9f3f
+  - enabled: 1
+    path: Assets/PLAYER/Script/Scenes/Remake/Map02.unity
+    guid: b3fd1c2b14b8c7049911bcbe69d3b2a8
+  - enabled: 1
+    path: Assets/PLAYER/Script/Scenes/Remake/Map03.unity
+    guid: 988246d964bb3b94cb45bce0532024d0
+  - enabled: 1
+    path: Assets/PLAYER/Script/Scenes/Remake/Map05.unity
+    guid: e44e05357d229bb4d8997334fbcac7dd
+  - enabled: 1
+    path: Assets/PLAYER/Script/Scenes/Remake/Map06.unity
+    guid: f81f270de5519d24eafdc7b43d65fdce
+  - enabled: 1
+    path: Assets/PLAYER/Script/Scenes/BossRoom01.unity
+    guid: d040ead23fef9ea44afd8fde09fdc4e4
+  - enabled: 0
+    path: Assets/PLAYER/Script/Scenes/map 2.unity
+    guid: eb9f7953f802c41459088502d4c21555
+  - enabled: 0
+    path: Assets/PLAYER/Script/Scenes/map 3.unity
+    guid: 1a63d2a6653f706468936f5d6de1a29b
+  m_configObjects: {}

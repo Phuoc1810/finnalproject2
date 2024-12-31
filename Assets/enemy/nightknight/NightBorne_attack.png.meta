@@ -1,0 +1,378 @@
+fileFormatVersion: 2
+guid: 77a2fe2552cd46b45b32b1d3d0336364
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 28
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NightBorne_attack_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 16
+        width: 35
+        height: 29
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 506d584b4c982e943a1097cd10a0c9b8
+      internalID: 1017265147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NightBorne_attack_1
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 16
+        width: 32
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: 0.48333332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12825c5c0472a324dbb83af4c2cc83b7
+      internalID: -967519992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NightBorne_attack_2
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 16
+        width: 24
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3152174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6476ca3e3a4dd2547b86af2def8f6cb2
+      internalID: -2141823080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NightBorne_attack_3
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 16
+        width: 24
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3152174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c9fdb0c026f48a44ae6a88ad6c403c5
+      internalID: -1199057768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NightBorne_attack_4
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 16
+        width: 26
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3152174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a8bd566ad619740b02400fcbd43855
+      internalID: -126325368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NightBorne_attack_5
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 16
+        width: 27
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5, y: 0.30851063}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f51086fe92fcec241a696be842074614
+      internalID: 222237139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NightBorne_attack_6
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 16
+        width: 27
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3152174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 162f2d0d04bb36547b5d600b61fa45ec
+      internalID: -262869136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NightBorne_attack_7
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 16
+        width: 27
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3152174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 688d38449518d604da1415bf331c9acb
+      internalID: -151259651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NightBorne_attack_8
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 16
+        width: 27
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3152174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76071d2feff5bb442a1d3fff74dab24f
+      internalID: -545885312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NightBorne_attack_9
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 10
+        width: 53
+        height: 61
+      alignment: 9
+      pivot: {x: 0.5, y: 0.23770492}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df16a5c2584db9f41a40805d56083c65
+      internalID: -1873991476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NightBorne_attack_10
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 13
+        width: 46
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43939394}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2af16dfdfea17d42a139f1c248b30dc
+      internalID: -1917071745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NightBorne_attack_11
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 16
+        width: 33
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: 0.48333332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fefe015a672caf4bb0aafdec060f424
+      internalID: 1022727891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      NightBorne_attack_0: 1017265147
+      NightBorne_attack_1: -967519992
+      NightBorne_attack_10: -1917071745
+      NightBorne_attack_11: 1022727891
+      NightBorne_attack_2: -2141823080
+      NightBorne_attack_3: -1199057768
+      NightBorne_attack_4: -126325368
+      NightBorne_attack_5: 222237139
+      NightBorne_attack_6: -262869136
+      NightBorne_attack_7: -151259651
+      NightBorne_attack_8: -545885312
+      NightBorne_attack_9: -1873991476
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
