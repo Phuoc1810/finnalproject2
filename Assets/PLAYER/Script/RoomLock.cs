@@ -35,7 +35,7 @@ public class RoomLock : MonoBehaviour
     }
     private IEnumerator FuntionHide()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(30);
         Destroy(lockDoor);
         unlockDoor.SetActive(true);
         funtionWall.SetActive(false);

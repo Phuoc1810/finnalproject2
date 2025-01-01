@@ -4693,7 +4693,7 @@ MonoBehaviour:
   tileSpawmInterval: 0.5
   numberOfTile: 8
   timeStart: 2.5
-  maxHeal: 500
+  maxHeal: 300
   healSlider: {fileID: 1988837606}
 --- !u!61 &1286584666
 BoxCollider2D:

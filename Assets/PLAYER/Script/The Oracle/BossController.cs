@@ -14,6 +14,7 @@ public class BossController : MonoBehaviour
     private Transform playerTransform; // vi tri cua nguoi choi
     public float timeStart = 2.5f; // thoi gian de boss bat dau tan cong
     private Vector3 currentDirection; // huong di chuyen cua chuoi gach
+    public float spaceSpawn = 2f;
 
     //quan li chi so boss
     public int maxHeal = 200;
@@ -26,10 +27,10 @@ public class BossController : MonoBehaviour
     //tham chieu den sprite nguoi choi
     private playersat playerStart;
 
-    //bien kiem tra su dung skill dac biet
-    private bool isSpecialSkillColdDown = false;
+    //private bool isSpecialSkillColdDown = false;
     //quan li trang thai tan cong
     private bool isAttacking = true;
+    private Coroutine currentAttackCoroutine;
 
     void Start()
     {
@@ -63,7 +64,6 @@ public class BossController : MonoBehaviour
     {
         Debug.Log("Attack sequence started");
         StartCoroutine(BossStart());
-
     }
 
     private IEnumerator BossStart()
@@ -72,21 +72,7 @@ public class BossController : MonoBehaviour
         //goi effect boss
         StartCoroutine(SpawmTiles());
     }
-
-    private IEnumerator AttackPhases()
-    {
-        yield return new WaitForSeconds(timeStart);
-        //giai doan 2 (khi mau <= 60%)
-        while (currentHeal >= maxHeal * 0.6f)
-        {
-            yield return StartCoroutine(PhaseTwoMachanic());
-        }
-        //giai doan 3 (khi mau <= 30%)
-        while (currentHeal  >= maxHeal * 0.3f && currentHeal > 0)
-        {
-            yield return StartCoroutine(PhareThreeMechanic());
-        }
-    }
+   
     private IEnumerator SpawmTiles()
     {
         Debug.Log("Starting to spawn tiles...");
@@ -123,6 +109,57 @@ public class BossController : MonoBehaviour
         }
     }
 
+    public void TakeDamage()
+    {
+        if (playerStart == null) return; // dam bao playerStarts khong null
+        //tinh sat thuong dua tren chi so choi cua nguoi choi
+        int damage = (int)playerStart.attack;
+        currentHeal -= damage; //giam mau cua boss
+
+        StartCoroutine(ChangeColorWhenDamaged());
+        Debug.Log($"Boss current health: {currentHeal}");
+
+        if (healSlider != null)
+        {
+            healSlider.value = currentHeal; //cap nhat gia tri cho thanh mau
+        }
+
+        //kich hoat ki nang dac biet khi mau <= 30%
+        //if(currentHeal <= maxHeal * 0.3 && !isSpecialSkillColdDown && specialSkill != null && !specialSkill.activeSelf)
+
+        //StartCoroutine(ActivateSpecialSkill());
+
+
+        //kiem tra neu mau <= 0
+        if (currentHeal <= 0)
+        {
+            isAttacking = false;
+            animator.ResetTrigger("Attack1");
+            Die();
+            //specialSkill.SetActive(false);
+        }
+        //giai doan 2 (khi mau <= 60%)
+        if (currentHeal <= maxHeal * 0.6f && currentHeal > maxHeal * 0.3f)
+        {
+            Debug.Log("phase2");
+            ChangePhase(PhaseTwoMachanic());
+        }
+        //giai doan 3 (khi mau <= 30%)
+        else if (currentHeal <= maxHeal * 0.3f && currentHeal > 0)
+        {
+            Debug.Log("phase3");
+            ChangePhase(PhareThreeMechanic());
+        }
+    }
+
+    private void ChangePhase(IEnumerator newPhase)
+    {
+        if(currentAttackCoroutine != null)
+        {
+            StopCoroutine(currentAttackCoroutine); //dung coroutine hien tai
+        }
+        currentAttackCoroutine = StartCoroutine(newPhase); //bat dau pha moi
+    }
     //giai doan 2
     private IEnumerator PhaseTwoMachanic()
     {
@@ -134,7 +171,7 @@ public class BossController : MonoBehaviour
             //spawm cac o vuong xung quanh nguoi choi
             for(int i = 0; i < numberOfTile; i++)
             {
-                Vector3 ramdomOffset = Random.insideUnitCircle * 3f; //vi tri ngau nhien trong ban kinh 3 don vi xung quanh nguoi choi
+                Vector3 ramdomOffset = Random.insideUnitCircle * spaceSpawn; //vi tri ngau nhien trong ban kinh spaceSpawn don vi xung quanh nguoi choi
                 Vector3 tilePosition = playerTransform.position + ramdomOffset;
 
                 //tao o vuong tai vi tri da tinh toan
@@ -156,7 +193,7 @@ public class BossController : MonoBehaviour
 
             //lay toan bo san dau va xac dinh vung an toan
             Vector3 arenaCenter = transform.position; //Gia dinh boss o giua san dau
-            float arenaSize = 6f; //gioi gan san dau (gia dinh 6x6)
+            float arenaSize = 6f; //gioi gan san dau 
             int safeTile = 5; //so luong o vuong an toan
 
             HashSet<Vector3> safeZones = new HashSet<Vector3>();
@@ -188,36 +225,7 @@ public class BossController : MonoBehaviour
         yield return new WaitForSeconds(3);
     }
     //ham giam mau cua boss
-    public void TakeDamage()
-    {
-        if (playerStart == null) return; // dam bao playerStarts khong null
-        //tinh sat thuong dua tren chi so choi cua nguoi choi
-        int damage = (int)playerStart.attack;
-        currentHeal -= damage; //giam mau cua boss
-
-        StartCoroutine(ChangeColorWhenDamaged());
-        Debug.Log($"Boss current health: {currentHeal}");
-
-        if(healSlider != null)
-        {
-            healSlider.value = currentHeal; //cap nhat gia tri cho thanh mau
-        }
-
-        //kich hoat ki nang dac biet khi mau <= 30%
-        //if(currentHeal <= maxHeal * 0.3 && !isSpecialSkillColdDown && specialSkill != null && !specialSkill.activeSelf)
-        
-            //StartCoroutine(ActivateSpecialSkill());
-        
-
-        //kiem tra neu mau <= 0
-        if(currentHeal <= 0)
-        {
-            isAttacking = false;
-            animator.ResetTrigger("Attack1");
-            Die();
-            //specialSkill.SetActive(false);
-        }
-    }
+    
 
     //couroutine de doi mau tam thoi khi nhan sat thuong
     private IEnumerator ChangeColorWhenDamaged()
