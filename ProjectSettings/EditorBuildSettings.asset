@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/PLAYER/Script/Scenes/map 3.unity
     guid: 1a63d2a6653f706468936f5d6de1a29b
+  - enabled: 1
+    path: Assets/sprite/Scenes/menu.unity
+    guid: ee43a6188f6c82742a30617285c4c6f3
   m_configObjects: {}
