@@ -32,6 +32,8 @@ public class BossController : MonoBehaviour
     private bool isAttacking = true;
     private Coroutine currentAttackCoroutine;
 
+    //luu tru cac vi tri o vuong da spawn
+    private HashSet<Vector3> spawnedTilePosition = new HashSet<Vector3>();
     void Start()
     {
         currentHeal = maxHeal; //khoi tao mau cua boss
@@ -94,6 +96,11 @@ public class BossController : MonoBehaviour
                 // tinh toan vi tri moi (tinh theo vi tri cuoi cùng, không phải vị trí người chơi)
                 Vector3 tilePosition = lastTilePosition + currentDirection * spacing;
 
+                //kiem tra neu vi tri nay da duoc spawn
+                while(IsPositionOccupie(tilePosition, spacing))
+                {
+                    tilePosition = lastTilePosition + currentDirection * spacing + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
+                }
                 // tạo viên gạch tại vị trí tính toán
                 if (playerTransform != null)
                 {
@@ -101,6 +108,8 @@ public class BossController : MonoBehaviour
                     GameObject tile = Instantiate(explosiveTilePerfab, tilePosition, Quaternion.identity);
                     tile.GetComponent<ExplosiveTile>().Initialize(playerTransform.position);
                 }
+                //luu tru vi tri vua spawn
+                spawnedTilePosition.Add(tilePosition);
                 // cho truoc khi tao o vuong tiep theo
                 yield return new WaitForSeconds(tileSpawmInterval);
             }
@@ -109,6 +118,18 @@ public class BossController : MonoBehaviour
         }
     }
 
+    private bool IsPositionOccupie(Vector3 position, float spacing)
+    {
+        //kiem tra xem vi tri co trung voi cac o vuong da spawn hay khong
+        foreach(Vector3 spawnedPosition in spawnedTilePosition)
+        {
+            if(Vector3.Distance(position, spawnedPosition) < spacing) //neu khoang cach nho hon spacing, coi nhu bi chiem
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     public void TakeDamage()
     {
         if (playerStart == null) return; // dam bao playerStarts khong null
