@@ -8,6 +8,7 @@ public class settingsat : MonoBehaviour
     public float lineOfSite = 2f;
    
     public Transform player;
+    public bool check = false;
 
     private void Start()
     {
@@ -21,16 +22,18 @@ public class settingsat : MonoBehaviour
         if (distancefromplayer < lineOfSite)
         {
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && check==false)
             {
 
                 pannel.SetActive(true);
                 Time.timeScale = 0;
+                check = true;
             }
-            else if (Input.GetKeyDown(KeyCode.Escape))
+            else if (Input.GetKeyDown(KeyCode.E) && check == true)
             {
                 pannel.SetActive(false);
                 Time.timeScale = 1;
+                check = false;
             }
 
         }
