@@ -49,12 +49,12 @@ public class playersat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // pointstat.text = point.ToString();
-        //hpstat.fillAmount = maxhp / 1000;
-        //mpstat.fillAmount = maxmp / 1000;
-        //defstat.fillAmount = defent / 25;
-       // atkstat.fillAmount = attack / 10;
-       // skillstat.fillAmount = skill / 10;
+        pointstat.text = point.ToString();
+        hpstat.fillAmount = maxhp / 1000;
+        mpstat.fillAmount = maxmp / 1000;
+        defstat.fillAmount = defent / 25;
+        atkstat.fillAmount = attack / 10;
+        skillstat.fillAmount = skill / 10;
         if (currenthp < maxhp)
         {
             hprecoverytime -= Time.deltaTime;
