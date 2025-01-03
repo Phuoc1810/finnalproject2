@@ -4690,9 +4690,12 @@ MonoBehaviour:
   explosiveTilePerfab: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
     type: 3}
   animator: {fileID: 1286584662}
+  animatorPrefab: {fileID: 1701133505057203881, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+    type: 3}
   tileSpawmInterval: 0.5
   numberOfTile: 8
   timeStart: 2.5
+  spaceSpawn: 2
   maxHeal: 300
   healSlider: {fileID: 1988837606}
 --- !u!61 &1286584666

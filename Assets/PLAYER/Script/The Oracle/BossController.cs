@@ -7,8 +7,11 @@ using UnityEngine.UI;
 
 public class BossController : MonoBehaviour
 {
+    public static BossController Instance;
+
     public GameObject explosiveTilePerfab; // tham chieu den vien gach
     public Animator animator;
+    public Animator animatorPrefab;
     public float tileSpawmInterval = 0.5f; // khoan thoi gian giua cac lan spawm o vuong
     public int numberOfTile = 8; // so o vuong xuat hien sau moi dot tan cong
     private Transform playerTransform; // vi tri cua nguoi choi
@@ -26,14 +29,15 @@ public class BossController : MonoBehaviour
 
     //tham chieu den sprite nguoi choi
     private playersat playerStart;
+    private SpriteRenderer spriteRenderer;
 
-    //private bool isSpecialSkillColdDown = false;
+    private bool isSpecialSkillColdDown = false;
     //quan li trang thai tan cong
     private bool isAttacking = true;
-    private Coroutine currentAttackCoroutine;
+    //private Coroutine currentAttackCoroutine;
 
     //luu tru cac vi tri o vuong da spawn
-    private HashSet<Vector3> spawnedTilePosition = new HashSet<Vector3>();
+    //private HashSet<Vector3> spawnedTilePosition = new HashSet<Vector3>();
     void Start()
     {
         currentHeal = maxHeal; //khoi tao mau cua boss
@@ -48,6 +52,7 @@ public class BossController : MonoBehaviour
         GameObject player = GameObject.FindWithTag("Player");
         if (player != null)
         {
+            spriteRenderer = GetComponent<SpriteRenderer>();
             playerTransform = player.transform; // gan transform cua Player vao bien player
             playerStart = player.GetComponent<playersat>(); //lay component chi so cua player
             if(playerStart == null)
@@ -59,7 +64,6 @@ public class BossController : MonoBehaviour
         {
             Debug.LogError("Dont Find game object with tag 'Player' !");
         }
-        StartAttackSequence();
     }
 
     public void StartAttackSequence()
@@ -84,7 +88,7 @@ public class BossController : MonoBehaviour
             yield return new WaitForSeconds(1); // thoi gian cho tuong ung vo animation tan cong
 
             animator.SetTrigger("Attack1");
-
+            
             // lay vi tri hien tai cua player la diem bat dau
             currentDirection = (playerTransform.position - transform.position).normalized; // huong mac dinh cua vien gach
 
@@ -97,10 +101,7 @@ public class BossController : MonoBehaviour
                 Vector3 tilePosition = lastTilePosition + currentDirection * spacing;
 
                 //kiem tra neu vi tri nay da duoc spawn
-                while(IsPositionOccupie(tilePosition, spacing))
-                {
-                    tilePosition = lastTilePosition + currentDirection * spacing + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
-                }
+                
                 // tạo viên gạch tại vị trí tính toán
                 if (playerTransform != null)
                 {
@@ -109,7 +110,7 @@ public class BossController : MonoBehaviour
                     tile.GetComponent<ExplosiveTile>().Initialize(playerTransform.position);
                 }
                 //luu tru vi tri vua spawn
-                spawnedTilePosition.Add(tilePosition);
+            
                 // cho truoc khi tao o vuong tiep theo
                 yield return new WaitForSeconds(tileSpawmInterval);
             }
@@ -118,18 +119,6 @@ public class BossController : MonoBehaviour
         }
     }
 
-    private bool IsPositionOccupie(Vector3 position, float spacing)
-    {
-        //kiem tra xem vi tri co trung voi cac o vuong da spawn hay khong
-        foreach(Vector3 spawnedPosition in spawnedTilePosition)
-        {
-            if(Vector3.Distance(position, spawnedPosition) < spacing) //neu khoang cach nho hon spacing, coi nhu bi chiem
-            {
-                return true;
-            }
-        }
-        return false;
-    }
     public void TakeDamage()
     {
         if (playerStart == null) return; // dam bao playerStarts khong null
@@ -152,45 +141,35 @@ public class BossController : MonoBehaviour
 
 
         //kiem tra neu mau <= 0
-        if (currentHeal <= 0)
+        if(currentHeal <= 0)
         {
-            isAttacking = false;
-            animator.ResetTrigger("Attack1");
             Die();
-            //specialSkill.SetActive(false);
         }
-        //giai doan 2 (khi mau <= 60%)
-        if (currentHeal <= maxHeal * 0.6f && currentHeal > maxHeal * 0.3f)
+        //set phare 1
+        if(currentHeal <= maxHeal && currentHeal > maxHeal * 0.6)
         {
-            Debug.Log("phase2");
-            ChangePhase(PhaseTwoMachanic());
+            StartAttackSequence();
         }
-        //giai doan 3 (khi mau <= 30%)
-        else if (currentHeal <= maxHeal * 0.3f && currentHeal > 0)
+        //set phare 2
+        else if(currentHeal <= maxHeal * 0.6 && currentHeal > maxHeal * 0.3)
         {
-            Debug.Log("phase3");
-            ChangePhase(PhareThreeMechanic());
+            StartCoroutine(PhaseTwoMachanic());
         }
+        
     }
 
-    private void ChangePhase(IEnumerator newPhase)
-    {
-        if(currentAttackCoroutine != null)
-        {
-            StopCoroutine(currentAttackCoroutine); //dung coroutine hien tai
-        }
-        currentAttackCoroutine = StartCoroutine(newPhase); //bat dau pha moi
-    }
     //giai doan 2
     private IEnumerator PhaseTwoMachanic()
     {
         while (isAttacking)
         {
+            animatorPrefab.SetTrigger("Phare2");
+
             yield return new WaitForSeconds(1); //delay truoc khi bat dau giai doan 2
             animator.SetTrigger("Attack1");
 
             //spawm cac o vuong xung quanh nguoi choi
-            for(int i = 0; i < numberOfTile; i++)
+            for (int i = 0; i < numberOfTile; i++)
             {
                 Vector3 ramdomOffset = Random.insideUnitCircle * spaceSpawn; //vi tri ngau nhien trong ban kinh spaceSpawn don vi xung quanh nguoi choi
                 Vector3 tilePosition = playerTransform.position + ramdomOffset;
@@ -203,55 +182,14 @@ public class BossController : MonoBehaviour
             yield return new WaitForSeconds(3);
         }
     }
-
     //Giai doan 3
-    private IEnumerator PhareThreeMechanic()
-    {
-        while (isAttacking)
-        {
-            yield return new WaitForSeconds(1);
-            animator.SetTrigger("Attack1");
 
-            //lay toan bo san dau va xac dinh vung an toan
-            Vector3 arenaCenter = transform.position; //Gia dinh boss o giua san dau
-            float arenaSize = 6f; //gioi gan san dau 
-            int safeTile = 5; //so luong o vuong an toan
-
-            HashSet<Vector3> safeZones = new HashSet<Vector3>();
-            while (safeZones.Count < safeTile)
-            {
-                Vector3 safePosition = arenaCenter + new Vector3(
-                    Random.Range(-arenaSize, arenaSize),
-                    Random.Range(-arenaSize, arenaSize),
-                    0
-                );
-                safeZones.Add(safePosition);
-            }
-
-            //spawn o vuong tren mat dat, ngoai tru vung an toan
-            for(float x = - arenaSize; x <= arenaSize; x += 1.5f)
-            {
-                for (float y = - arenaSize; y <= arenaSize; y += 1.5f)
-                {
-                    Vector3 tilePoision = arenaCenter + new Vector3(x, y, 0);
-                    if (!safeZones.Contains(tilePoision))
-                    {
-                        GameObject tile = Instantiate(explosiveTilePerfab, tilePoision, Quaternion.identity);
-                        tile.GetComponent<ExplosiveTile>().Initialize(playerTransform.position);
-                    }
-                }
-            }
-        }
-        animator.SetTrigger("Indle");
-        yield return new WaitForSeconds(3);
-    }
     //ham giam mau cua boss
-    
+
 
     //couroutine de doi mau tam thoi khi nhan sat thuong
     private IEnumerator ChangeColorWhenDamaged()
     {
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 
         if (spriteRenderer != null)
         {
