@@ -339,7 +339,7 @@ Transform:
   m_GameObject: {fileID: 134086058}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.88, y: -2.06, z: -6.4599695}
+  m_LocalPosition: {x: -5.52, y: -9.58, z: -6.4599695}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1097,7 +1097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 607493677}
   m_Layer: 0
-  m_Name: spawm
+  m_Name: SB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1112,7 +1112,7 @@ Transform:
   m_GameObject: {fileID: 607493676}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.48, y: -9.02, z: -6.4599695}
+  m_LocalPosition: {x: -5.54, y: -9.34, z: -6.4599695}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4693,10 +4693,8 @@ MonoBehaviour:
   tileSpawmInterval: 0.5
   numberOfTile: 8
   timeStart: 2.5
-  maxHeal: 500
-  specialSkill: {fileID: 653742815}
+  maxHeal: 300
   healSlider: {fileID: 1988837606}
-  attackSound: {fileID: 8300000, guid: 4507abf139f8e7b498a28f9d10efd6f8, type: 3}
 --- !u!61 &1286584666
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4732,8 +4730,8 @@ BoxCollider2D:
   m_Offset: {x: -0.49168324, y: -1.5248348}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.484375, y: 0.84210527}
-    oldSize: {x: 4, y: 3.5625}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.125, y: 4.187751}
     newSize: {x: 3.125, y: 4.187751}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

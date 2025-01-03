@@ -8,6 +8,7 @@ public class minibossnoastar : MonoBehaviour
     public float health;
     public hearbar healthbar;
     public GameObject chest_Perfab;
+    public GameObject wall;
 
     private Animator anim;
     public Transform enemymove;
@@ -22,6 +23,7 @@ public class minibossnoastar : MonoBehaviour
         Point = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
         chest_Perfab.SetActive(false);
+        wall.SetActive(true);
     }
 
     public void takedamage(float damge)
@@ -41,7 +43,7 @@ public class minibossnoastar : MonoBehaviour
         if (health < 0)
         {
             anim.SetTrigger("die");
-            StartCoroutine(ChestAppear());
+      
 
         }
         Debug.Log("takedamge");
@@ -58,6 +60,8 @@ public class minibossnoastar : MonoBehaviour
     }
     public void die()
     {
+        chest_Perfab.SetActive(true);
+        wall.SetActive(false);
         Point.GetComponent<playersat>().point += 2;
         Destroy(gameObject);
     }
@@ -66,9 +70,5 @@ public class minibossnoastar : MonoBehaviour
         boss.speed = 3;
         
     }
-    private IEnumerator ChestAppear()
-    {
-        yield return new WaitForSeconds(2);
-        chest_Perfab.SetActive(true);
-    }
+   
 }
