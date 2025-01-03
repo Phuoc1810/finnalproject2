@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/sprite/Scenes/menu.unity
     guid: ee43a6188f6c82742a30617285c4c6f3
+  - enabled: 1
+    path: Assets/sprite/Scenes/help.unity
+    guid: 523fb9ad8fd81db4b9be82c147e3cc8b
   m_configObjects: {}
