@@ -27,7 +27,7 @@ public class playersat : MonoBehaviour
     public float hprecoverytime = 5f;
     public float mprecoverytime = 1f;
     public Animator anim;
-
+    public GameObject playerposition;
     public GameObject panneldie;
 
     [Header("STAT")]
@@ -216,7 +216,7 @@ public class playersat : MonoBehaviour
     public void restar()
     {
         panneldie.SetActive(false);
-
+        playerposition.transform.position = new Vector2(12.18f, 6.7f);
         SceneManager.LoadScene(0);
         anim.SetTrigger("live");
         Time.timeScale = 1;
