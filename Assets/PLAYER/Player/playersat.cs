@@ -41,6 +41,7 @@ public class playersat : MonoBehaviour
 
     void Start()
     {
+       
         anim = GetComponent<Animator>();
         nextexp = new float[10];
         nextexp[0] = 100;
