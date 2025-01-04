@@ -34,6 +34,7 @@ public class playersat : MonoBehaviour
     public Image defstat;
     public Image skillstat;
     public TextMeshProUGUI pointstat;
+    public int count = 0;
 
     void Start()
     {
@@ -72,6 +73,11 @@ public class playersat : MonoBehaviour
                 currentmp += 1;
                 mprecoverytime = 1f;
             }
+        }
+        if(currenthp<0 && count==0)
+        {
+            count++;
+            anim.SetTrigger("die");
         }
 
     }
@@ -199,5 +205,8 @@ public class playersat : MonoBehaviour
     {
         point += 1;
     }
-
+    public void die()
+    {
+        Debug.Log("die");
+    }
 }

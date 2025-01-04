@@ -17,6 +17,8 @@ public class enemyfollow : MonoBehaviour
     }
     private void Update()
     {
+
+        Vector2 target = new Vector2(player.position.x - 1, player.position.y);
         
         float distancefromplayer = Vector2.Distance(player.position, transform.position);
         if (distancefromplayer < lineOfSite)
@@ -27,7 +29,7 @@ public class enemyfollow : MonoBehaviour
                 lineOfSite *= 2;
             }
             anim.SetTrigger("WALK");
-            transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(this.transform.position, target, speed * Time.deltaTime);
         }
         else
             anim.SetTrigger("INDEL");
