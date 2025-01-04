@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class playersat : MonoBehaviour
@@ -26,6 +27,8 @@ public class playersat : MonoBehaviour
     public float hprecoverytime = 5f;
     public float mprecoverytime = 1f;
     public Animator anim;
+
+    public GameObject panneldie;
 
     [Header("STAT")]
     public Image hpstat;
@@ -207,6 +210,17 @@ public class playersat : MonoBehaviour
     }
     public void die()
     {
-        Debug.Log("die");
+        panneldie.SetActive(true);
+        Time.timeScale = 0;
+    }
+    public void restar()
+    {
+        panneldie.SetActive(false);
+
+        SceneManager.LoadScene(0);
+        anim.SetTrigger("live");
+        Time.timeScale = 1;
+        currenthp = maxhp;
+        count = 0;
     }
 }

@@ -83,8 +83,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1535054025
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -367107794, guid: 0eb24966566dfc6418458f374c5246c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -244,6 +244,7 @@ MonoBehaviour:
   enemymove: {fileID: 3714192773678886227}
   enemy: {fileID: 7586857468994097060}
   Point: {fileID: 0}
+  chest_Perfab: {fileID: 0}
 --- !u!114 &1183043316744607436
 MonoBehaviour:
   m_ObjectHideFlags: 0
