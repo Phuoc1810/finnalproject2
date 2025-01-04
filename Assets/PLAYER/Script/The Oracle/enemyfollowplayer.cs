@@ -18,7 +18,7 @@ public class enemyfollow : MonoBehaviour
     private void Update()
     {
 
-        Vector2 target = new Vector2(player.position.x - 1, player.position.y);
+        Vector2 target = new Vector2(player.position.x - 0.7f, player.position.y);
         
         float distancefromplayer = Vector2.Distance(player.position, transform.position);
         if (distancefromplayer < lineOfSite)
