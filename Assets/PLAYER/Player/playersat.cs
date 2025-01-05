@@ -41,7 +41,7 @@ public class playersat : MonoBehaviour
 
     void Start()
     {
-       
+        loadplayer();
         anim = GetComponent<Animator>();
         nextexp = new float[10];
         nextexp[0] = 100;
@@ -223,5 +223,25 @@ public class playersat : MonoBehaviour
         Time.timeScale = 1;
         currenthp = maxhp;
         count = 0;
+    }
+    public void savePlayer()
+    {
+        savesytem.Saveplayer(this);
+
+
+   }
+    public void loadplayer()
+
+    {
+        sat data = savesytem.loadplayer();
+        point = data.point;
+        maxhp = data.maxhp;
+        currenthp = data.currenthp;
+        currentmp = data.currentmp;
+        maxmp = data.maxmp;
+        defent = data.defent;
+        attack = data.attack;
+        skill = data.skill;
+
     }
 }
