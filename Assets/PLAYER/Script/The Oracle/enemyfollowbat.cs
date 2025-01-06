@@ -18,7 +18,7 @@ public class enemyfollowbat : MonoBehaviour
     }
     private void Update()
     {
-
+        Vector2 target = new Vector2(player.position.x - 0.7f, player.position.y);
         float distancefromplayer = Vector2.Distance(player.position, transform.position);
         if (distancefromplayer < lineOfSite)
         {
@@ -31,7 +31,7 @@ public class enemyfollowbat : MonoBehaviour
                 
             }
             anim.SetTrigger("walk");
-            transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(this.transform.position, target, speed * Time.deltaTime);
         }
         else
         {

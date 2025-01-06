@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class playersat : MonoBehaviour
@@ -26,6 +27,8 @@ public class playersat : MonoBehaviour
     public float hprecoverytime = 5f;
     public float mprecoverytime = 1f;
     public Animator anim;
+    public GameObject playerposition;
+    public GameObject panneldie;
 
     [Header("STAT")]
     public Image hpstat;
@@ -34,9 +37,11 @@ public class playersat : MonoBehaviour
     public Image defstat;
     public Image skillstat;
     public TextMeshProUGUI pointstat;
+    public int count = 0;
 
     void Start()
     {
+        loadplayer();
         anim = GetComponent<Animator>();
         nextexp = new float[10];
         nextexp[0] = 100;
@@ -72,6 +77,11 @@ public class playersat : MonoBehaviour
                 currentmp += 1;
                 mprecoverytime = 1f;
             }
+        }
+        if(currenthp<0 && count==0)
+        {
+            count++;
+            anim.SetTrigger("die");
         }
 
     }
@@ -199,5 +209,39 @@ public class playersat : MonoBehaviour
     {
         point += 1;
     }
+    public void die()
+    {
+        panneldie.SetActive(true);
+        Time.timeScale = 0;
+    }
+    public void restar()
+    {
+        panneldie.SetActive(false);
+        playerposition.transform.position = new Vector2(12.18f, 6.7f);
+        SceneManager.LoadScene(0);
+        anim.SetTrigger("live");
+        Time.timeScale = 1;
+        currenthp = maxhp;
+        count = 0;
+    }
+    public void savePlayer()
+    {
+        savesytem.Saveplayer(this);
 
+
+   }
+    public void loadplayer()
+
+    {
+        sat data = savesytem.loadplayer();
+        point = data.point;
+        maxhp = data.maxhp;
+        currenthp = data.currenthp;
+        currentmp = data.currentmp;
+        maxmp = data.maxmp;
+        defent = data.defent;
+        attack = data.attack;
+        skill = data.skill;
+
+    }
 }
