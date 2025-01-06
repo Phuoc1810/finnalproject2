@@ -14,6 +14,10 @@ public class miniboss : MonoBehaviour
     public GameObject playerposition;
     public bool move = true;
 
+    [SerializeField] private AudioClip attacksound;
+    [SerializeField] private AudioClip dieSound;
+    [SerializeField] private AudioClip teleportSound;
+
     private void Start()
     {
 
@@ -56,5 +60,17 @@ public class miniboss : MonoBehaviour
     {
         transform.position = playerposition.transform.position;
         timetele = 8;
+    }
+    public void AttackSound()
+    {
+        AudioManager.instance.PlayOneShotAudio(attacksound);
+    }
+    public void DieSound()
+    {
+        AudioManager.instance.PlayOneShotAudio(dieSound);
+    }
+    public void TeleSound()
+    {
+        AudioManager.instance.PlayOneShotAudio(teleportSound);
     }
 }

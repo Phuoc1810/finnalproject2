@@ -378,6 +378,9 @@ MonoBehaviour:
   timetele: 10
   playerposition: {fileID: 0}
   move: 1
+  attacksound: {fileID: 8300000, guid: 2bff94d0b1336f844bac23b578d58c8e, type: 3}
+  dieSound: {fileID: 8300000, guid: edd8b98aff729764eb90be5c253d1eaf, type: 3}
+  teleportSound: {fileID: 8300000, guid: df2bea5149f2bfc4c8cd3e8e3b511c96, type: 3}
 --- !u!114 &3733147193008692661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,6 +428,7 @@ MonoBehaviour:
   health: 30
   healthbar: {fileID: 5628695402152248045}
   chest_Perfab: {fileID: 0}
+  wall: {fileID: 0}
   enemymove: {fileID: 1800012560810324611}
   boss: {fileID: 5959246110328234282}
   Point: {fileID: 0}
