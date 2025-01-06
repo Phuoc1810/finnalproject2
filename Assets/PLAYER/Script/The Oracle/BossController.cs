@@ -35,7 +35,7 @@ public class BossController : MonoBehaviour
     //quan li trang thai tan cong
     private bool isAttacking = true;
     //private Coroutine currentAttackCoroutine;
-
+    public AudioClip bg_Music;
     //luu tru cac vi tri o vuong da spawn
     //private HashSet<Vector3> spawnedTilePosition = new HashSet<Vector3>();
     void Start()
@@ -52,6 +52,10 @@ public class BossController : MonoBehaviour
         GameObject player = GameObject.FindWithTag("Player");
         if (player != null)
         {
+            if (bg_Music != null)
+            {
+                AudioManager.instance.PlayBackGroundMusic(bg_Music);
+            }
             spriteRenderer = GetComponent<SpriteRenderer>();
             playerTransform = player.transform; // gan transform cua Player vao bien player
             playerStart = player.GetComponent<playersat>(); //lay component chi so cua player
@@ -192,5 +196,6 @@ public class BossController : MonoBehaviour
         animator.SetTrigger("die");
         // huy doi tuong 
         Destroy(gameObject, 10);
+        //AudioManager.instance.StopBackGroundMusic(bg_Music);
     }
 }
