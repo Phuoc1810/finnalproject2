@@ -12,7 +12,16 @@ public class BossRoomTrigger : MonoBehaviour
     public Transform bossTransform; //Transform cua boss de camera di chuyen den do
     public AudioClip bossClip; //effect boss start
 
+    [SerializeField] private AudioClip bg_Music;
     private bool bossStarted = false;
+
+    private void Start()
+    {
+        if(bg_Music != null)
+        {
+            AudioManager.instance.PlayBackGroundMusic(bg_Music);
+        }
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player") & !bossStarted)

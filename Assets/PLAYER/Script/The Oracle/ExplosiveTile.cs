@@ -13,11 +13,14 @@ public class ExplosiveTile : MonoBehaviour
     private CameraShake cameraShake;
     private Cinemachine.CinemachineVirtualCamera virtualCamera;
 
+    private SpriteRenderer spriteRenderer;
     //tham chieu audio clip
     public AudioClip effectClip;
+    private Animator animator;
     void Start()
     {
         explosiveCollider = GetComponent<Collider2D>();
+        animator = GetComponent<Animator>();
         explosiveCollider.enabled = false;
         if( explosiveCollider == null)
         {
@@ -42,11 +45,13 @@ public class ExplosiveTile : MonoBehaviour
         {
             Debug.LogError("Cinemachine Virtual Camera not Found!");
         }
+
+        
     }
     public void Initialize(Vector3 spawmPosition)
     {
         transform.position = spawmPosition; //dat o vuong tai vi tri spawm
-        Invoke(nameof(ActivateTrigger), 0.32f);// delay 0.32s truoc khi gay damage
+        Invoke(nameof(ActivateTrigger), 0.5f);// delay 0.32s truoc khi gay damage
         AudioManager.instance.PlayOneShotAudio(effectClip); //goi effect
         Invoke(nameof(Explode), wartingDuration); //hen gio phat no
 
@@ -86,6 +91,11 @@ public class ExplosiveTile : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void Phare2SetColor()
+    {
+        animator.SetTrigger("Phare2");
     }
     //hien thi pham vi vu no trong Unity Editor chi dung de debug
     private void OnDrawGizmosSelected()

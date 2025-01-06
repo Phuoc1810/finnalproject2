@@ -16,6 +16,8 @@ public class flyenemy : MonoBehaviour
     [SerializeField] private LayerMask playerlayer;
     private float cooldowntimer = Mathf.Infinity;
     [SerializeField] private AudioClip attacksound;
+    [SerializeField] private AudioClip attacksound2;
+    [SerializeField] private AudioClip hurtsound;
     private Animator anim;
 
     private playersat playerhealth;
@@ -108,5 +110,18 @@ public class flyenemy : MonoBehaviour
         {
             playerhealth.hurtss();
         }
+    }
+
+    public void SoundAttack()
+    {
+        AudioManager.instance.PlayOneShotAudio(attacksound);
+    }
+    public void SoundAttack2()
+    {
+        AudioManager.instance.PlayOneShotAudio(attacksound2);
+    }
+    public void HurtSound()
+    {
+        AudioManager.instance.PlayOneShotAudio(hurtsound);
     }
 }
