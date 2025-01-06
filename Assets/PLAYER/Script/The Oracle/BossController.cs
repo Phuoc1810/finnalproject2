@@ -16,7 +16,8 @@ public class BossController : MonoBehaviour
     public float timeStart = 2.5f; // thoi gian de boss bat dau tan cong
     private Vector3 currentDirection; // huong di chuyen cua chuoi gach
     public float spaceSpawn = 2f;
-
+    public bool die = false;
+    public GameObject pannelwin;
     //quan li chi so boss
     public int maxHeal = 200;
     private int currentHeal; //mau hien tai
@@ -36,6 +37,15 @@ public class BossController : MonoBehaviour
 
     //luu tru cac vi tri o vuong da spawn
     private HashSet<Vector3> spawnedTilePosition = new HashSet<Vector3>();
+    private void Update()
+    {
+        if(die==true)
+        {
+            Time.timeScale = 0;
+            pannelwin.SetActive(true);
+            die = false;
+        }
+    }
     void Start()
     {
         currentHeal = maxHeal; //khoi tao mau cua boss
@@ -273,6 +283,7 @@ private IEnumerator ChangeColorWhenDamaged()
     //xu li logic khi boss chet
     private void Die()
     {
+        die = true;
         isAttacking = false;
         animator.ResetTrigger("Attack1");
         Debug.Log("boss defeated!");
