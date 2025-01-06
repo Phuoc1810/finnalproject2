@@ -44,6 +44,7 @@ public class player : MonoBehaviour
 
     //tham chieu den Watermelon
     public Watermelon watermelon;
+    public Fish fish;
     // Start is called before the first frame update
     public Slider sliderstamina;
     public float stamina = 1;
@@ -144,6 +145,13 @@ public class player : MonoBehaviour
             if(watermelon != null)
             {
                 watermelon.UseWatermelon();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if (fish != null)
+            {
+                fish.UseFish();
             }
         }
     }

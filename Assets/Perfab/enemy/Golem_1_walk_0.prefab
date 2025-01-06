@@ -418,7 +418,9 @@ MonoBehaviour:
   playerlayer:
     serializedVersion: 2
     m_Bits: 128
-  attacksound: {fileID: 0}
+  attacksound: {fileID: 8300000, guid: ca5dd31a8d6e0b34287ba57bbce323a4, type: 3}
+  attacksound2: {fileID: 8300000, guid: ca5dd31a8d6e0b34287ba57bbce323a4, type: 3}
+  hurtsound: {fileID: 8300000, guid: 0e6c1b84cba60974ca63ccb7b172d7bb, type: 3}
   enemypatroll: {fileID: 0}
 --- !u!114 &2776384566189986852
 MonoBehaviour:
