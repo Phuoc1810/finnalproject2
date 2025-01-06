@@ -64,6 +64,7 @@ public class BossController : MonoBehaviour
         {
             Debug.LogError("Dont Find game object with tag 'Player' !");
         }
+        StartAttackSequence();
     }
 
     public void StartAttackSequence()
@@ -145,47 +146,7 @@ public class BossController : MonoBehaviour
         {
             Die();
         }
-        //set phare 1
-        if(currentHeal <= maxHeal && currentHeal > maxHeal * 0.6)
-        {
-            StartAttackSequence();
-        }
-        //set phare 2
-        else if(currentHeal <= maxHeal * 0.6 && currentHeal > maxHeal * 0.3)
-        {
-            StartCoroutine(PhaseTwoMachanic());
-        }
-        
     }
-
-    //giai doan 2
-    private IEnumerator PhaseTwoMachanic()
-    {
-        while (isAttacking)
-        {
-            animatorPrefab.SetTrigger("Phare2");
-
-            yield return new WaitForSeconds(1); //delay truoc khi bat dau giai doan 2
-            animator.SetTrigger("Attack1");
-
-            //spawm cac o vuong xung quanh nguoi choi
-            for (int i = 0; i < numberOfTile; i++)
-            {
-                Vector3 ramdomOffset = Random.insideUnitCircle * spaceSpawn; //vi tri ngau nhien trong ban kinh spaceSpawn don vi xung quanh nguoi choi
-                Vector3 tilePosition = playerTransform.position + ramdomOffset;
-
-                //tao o vuong tai vi tri da tinh toan
-                GameObject tile = Instantiate(explosiveTilePerfab, tilePosition, Quaternion.identity);
-                tile.GetComponent<ExplosiveTile>().Initialize(playerTransform.position);
-            }
-            animator.SetTrigger("Indle");
-            yield return new WaitForSeconds(3);
-        }
-    }
-    //Giai doan 3
-
-    //ham giam mau cua boss
-
 
     //couroutine de doi mau tam thoi khi nhan sat thuong
     private IEnumerator ChangeColorWhenDamaged()
