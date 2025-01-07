@@ -45690,17 +45690,18 @@ MonoBehaviour:
     ng\u01B0\u01A1i kh\xF4ng ph\u1EA3i l\xE0 ng\u01B0\u1EDDi \u0111\u1EA7u ti\xEAn.
     V\xF9ng \u0111\u1EA5t n\xE0y \u0111\xE3 ch\u1EE9ng ki\u1EBFn v\xF4 s\u1ED1 k\u1EBB
     \u0111i qua, nh\u01B0ng ch\u1EB3ng ai tr\u1EDF l\u1EA1i."
-  - "Ta l\xE0 , m\u1ED9t linh h\u1ED3n l\u01B0u l\u1EA1c, ch\u1EB3ng thu\u1ED9c v\u1EC1
-    \u0111\xE2u. T\u1EEBng c\xF3 th\u1EDDi gian d\xE0i ta \u0111\xE3 \u0111i qua
-    nh\u1EEFng v\xF9ng \u0111\u1EA5t , ch\u1EE9ng ki\u1EBFn s\u1EF1 suy t\xE0n c\u1EE7a
-    m\u1ED9t \u0111\u1EBF ch\u1EBF h\xF9ng . Kh\xF4ng ai nh\u1EDB t\xEAn tu\u1ED5i
-    c\u1EE7a, c\u0169ng ch\u1EB3ng ai quan t\xE2m."
+  - "Ta l\xE0 Wrike, m\u1ED9t linh h\u1ED3n l\u01B0u l\u1EA1c, ch\u1EB3ng thu\u1ED9c
+    v\u1EC1 \u0111\xE2u. T\u1EEBng c\xF3 th\u1EDDi gian d\xE0i ta \u0111\xE3 \u0111i
+    qua nh\u1EEFng v\xF9ng \u0111\u1EA5t , ch\u1EE9ng ki\u1EBFn s\u1EF1 suy t\xE0n
+    c\u1EE7a m\u1ED9t \u0111\u1EBF ch\u1EBF oai h\xF9ng . Kh\xF4ng ai nh\u1EDB t\xEAn
+    tu\u1ED5i c\u1EE7a ta, c\u0169ng ch\u1EB3ng ai quan t\xE2m."
   - "\u0110\xE2y l\xE0 n\u01A1i m\xE0 m\u1ED9t \u0111\u1EBF ch\u1EBF v\u0129 \u0111\u1EA1i
     t\u1EEBng t\u1ED3n . M\u1ED9t \u0111\u1EBF ch\u1EBF m\xE0 gi\u1EDD ch\u1EC9 c\xF2n
     l\u1EA1i nh\u1EEFng d\u1EA5u v\u1EBFt phai m\u1EDD. V\xE0 trong nh\u1EEFng d\u1EA5u
-    v\u1EBFt \u1EA5y, m\u1ED9t c\xE1i t\xEAn kh\xF4ng th\u1EC3 x\xF3a: The Oracle"
+    v\u1EBFt \u1EA5y, m\u1ED9t c\xE1i t\xEAn kh\xF4ng th\u1EC3 x\xF3a nh\xF2a: The
+    Oracle"
   - "Ng\u01B0\u1EDDi ta \u0111\u1ED3n r\u1EB1ng \xF4g ta l\xE0 Ho\xE0ng \u0111\u1EBF
-    t\u1ED1i , ng\u01B0\u1EDDi \u0111\xE3 cai tr\u1ECB v\xF9ng \u0111\u1EA5t n\xE0y
+    t\u1ED1i cao, ng\u01B0\u1EDDi \u0111\xE3 cai tr\u1ECB v\xF9ng \u0111\u1EA5t n\xE0y
     b\u1EB1ng quy\u1EC1n l\u1EF1c tuy\u1EC7t. Nh\u01B0ng kh\xF4ng ai bi\u1EBFt \xF4g
     \u1EA5y th\u1EF1c s\u1EF1 l\xE0, hay l\xFD do v\xEC sao \xF4ng ta bi\u1EBFn m\u1EA5t."
   - "Nh\u01B0ng ng\u01B0\u01A1i kh\xF4ng c\u1EA7n ph\u1EA3i bi\u1EBFt t\u1EA5t c\u1EA3."
@@ -54480,7 +54481,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -901.00104, y: 462.07996}
+  m_AnchoredPosition: {x: -901.001, y: 462.07996}
   m_SizeDelta: {x: -1836.56, y: -996.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808319744
@@ -54563,7 +54564,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -802.00055, y: 462.07996}
+  m_AnchoredPosition: {x: -802.0005, y: 462.07996}
   m_SizeDelta: {x: -1836.56, y: -996.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1811433192
