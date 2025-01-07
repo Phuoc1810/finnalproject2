@@ -9,6 +9,7 @@ public class setactive : MonoBehaviour
     void Start()
     {
         pannelui.SetActive(true);
+        
     }
 
     // Update is called once per frame

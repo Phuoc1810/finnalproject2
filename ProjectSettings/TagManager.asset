@@ -14,6 +14,9 @@ TagManager:
   - miniboss
   - bat
   - worn
+  - pannelstat
+  - pannel
+  - stat
   layers:
   - Default
   - TransparentFX
