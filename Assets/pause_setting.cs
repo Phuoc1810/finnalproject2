@@ -37,7 +37,7 @@ public class pause_setting : MonoBehaviour
         
         pannelstat.SetActive(false);
         pannelpause.SetActive(false);
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(0);
         Time.timeScale = 1;
       
     }

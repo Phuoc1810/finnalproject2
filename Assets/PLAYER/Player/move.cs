@@ -30,9 +30,7 @@ public class player : MonoBehaviour
     public string lastscene;
     public Transform attackpoint;
     
-    private float attacktime=.25f;
-    private float attackcouter=.25f;
-    private bool isattacking= false;
+    
 
     [SerializeField] private GameObject panel_UIPlayer;
     [SerializeField] private GameObject Canvas_HealBar;

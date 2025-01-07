@@ -10,7 +10,7 @@ public class menu_setting : MonoBehaviour
     public int count = 0;
    public void play()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         
         if(count>=1)
         {
