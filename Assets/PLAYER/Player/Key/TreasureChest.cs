@@ -10,6 +10,7 @@ public class TreasureChest : MonoBehaviour
 
     private bool isOpen = false;
     private Animator chestAnimator;
+    [SerializeField] private AudioClip getsound;
     private void Start()
     {
         chestAnimator = GetComponent<Animator>();
@@ -19,12 +20,8 @@ public class TreasureChest : MonoBehaviour
         if(other.CompareTag("Player") && !isOpen)
         {
             isOpen = true;
-            KeyManager.instance.AddKey();
-            Watermelon.instance.AddWatermelon();
             OpenChest();
-            ShowNotification();
-            Debug.Log("Nguoi choi da nhan duoc key tu vung dat");
-            Destroy(gameObject, 2);
+          
         }
     }
     private void OpenChest()
@@ -57,5 +54,20 @@ public class TreasureChest : MonoBehaviour
             Destroy(notification_Canvas); //xoa canvas
             Time.timeScale = 1;
         }
+    }
+    public void Soundget()
+    {
+        AudioManager.instance.PlayOneShotAudio(getsound);
+    }
+    public void takekey()
+    {
+        KeyManager.instance.AddKey();
+        Watermelon.instance.AddWatermelon();
+
+        ShowNotification();
+        Debug.Log("Nguoi choi da nhan duoc key tu vung dat");
+        
+        Destroy(gameObject, 2);
+
     }
 }

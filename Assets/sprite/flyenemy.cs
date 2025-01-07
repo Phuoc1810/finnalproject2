@@ -15,6 +15,7 @@ public class flyenemy : MonoBehaviour
     [SerializeField] private BoxCollider2D boxcollider;
     [SerializeField] private LayerMask playerlayer;
     private float cooldowntimer = Mathf.Infinity;
+    
     [SerializeField] private AudioClip attacksound;
     private Animator anim;
 
@@ -109,4 +110,9 @@ public class flyenemy : MonoBehaviour
             playerhealth.hurtss();
         }
     }
+    public void SoundAttack1()
+    {
+        AudioManager.instance.PlayOneShotAudio(attacksound);
+    }
+   
 }

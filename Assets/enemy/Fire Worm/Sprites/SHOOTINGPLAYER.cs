@@ -15,6 +15,7 @@ public class SHOOTINGPLAYER : MonoBehaviour
     public Animator anim;
     public float firerate = 2f;
     public float nextfiretime;
+    [SerializeField] private AudioClip hurtsound;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -50,5 +51,9 @@ public class SHOOTINGPLAYER : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, lineOfSite);
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, shootingranger);
+    }
+    public void hurtAttack1()
+    {
+        AudioManager.instance.PlayOneShotAudio(hurtsound);
     }
 }

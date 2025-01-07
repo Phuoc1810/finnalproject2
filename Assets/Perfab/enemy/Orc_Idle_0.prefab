@@ -352,7 +352,7 @@ MonoBehaviour:
   playerlayer:
     serializedVersion: 2
     m_Bits: 128
-  attacksound: {fileID: 0}
+  attacksound: {fileID: 8300000, guid: 89202b00597cd334e82b8e40b8219da0, type: 3}
   enemypatroll: {fileID: 0}
 --- !u!50 &5772343848908451837
 Rigidbody2D:
@@ -399,6 +399,7 @@ MonoBehaviour:
   enemymove: {fileID: 2357677731693134078}
   enemy: {fileID: 4128129777957369466}
   Point: {fileID: 0}
+  hurtsound: {fileID: 8300000, guid: b9ea3699e8db5714e8225bf33b4419aa, type: 3}
 --- !u!114 &4128129777957369466
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class enemynoastar : MonoBehaviour
   
     public enemyfollow enemy;
     public GameObject Point;
+    [SerializeField] private AudioClip hurtsound;
     private void Start()
     {
 
@@ -69,5 +70,9 @@ public class enemynoastar : MonoBehaviour
     {
       
         enemy.speed = 2;
+    }
+    public void Soundhurt()
+    {
+        AudioManager.instance.PlayOneShotAudio(hurtsound);
     }
 }

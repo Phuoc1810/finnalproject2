@@ -15,6 +15,7 @@ public class batenemydamge : MonoBehaviour
     [SerializeField] private BoxCollider2D boxcollider;
     [SerializeField] private LayerMask playerlayer;
     private float cooldowntimer = Mathf.Infinity;
+    [SerializeField] private AudioClip attacksound2;
     [SerializeField] private AudioClip attacksound;
     private Animator anim;
 
@@ -108,5 +109,13 @@ public class batenemydamge : MonoBehaviour
         {
             playerhealth.hurtss();
         }
+    }
+    public void SoundAttack1()
+    {
+        AudioManager.instance.PlayOneShotAudio(attacksound);
+    }
+     public void SoundAttack2()
+    {
+        AudioManager.instance.PlayOneShotAudio(attacksound2);
     }
 }
