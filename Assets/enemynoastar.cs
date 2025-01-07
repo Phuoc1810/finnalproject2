@@ -64,6 +64,7 @@ public class enemynoastar : MonoBehaviour
     public void die()
     {
         Point.GetComponent<playersat>().point += 0.2f;
+        DropItem();
         Destroy(gameObject);
     }
     public void ngangchuyendong()
@@ -74,5 +75,17 @@ public class enemynoastar : MonoBehaviour
     public void Soundhurt()
     {
         AudioManager.instance.PlayOneShotAudio(hurtsound);
+    }
+    private void DropItem()
+    {
+        float randomValue = Random.Range(0f, 100f);
+        if(randomValue < 25f)
+        {
+            Watermelon.instance.AddWatermelon();
+        }
+        else if(randomValue < 35f)
+        {
+            Fish.instance.AddFish();
+        }
     }
 }

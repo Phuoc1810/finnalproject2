@@ -156,7 +156,7 @@ MonoBehaviour:
   bossAnimator: {fileID: 1286584662}
   cameraDuration: 1.5
   bossTransform: {fileID: 1286584664}
-  bossClip: {fileID: 8300000, guid: fad8f39f94c5dd549ac8ec51ff73ad29, type: 3}
+  bossClip: {fileID: 8300000, guid: 09417e5d8118ea740b025ffd15cf53f5, type: 3}
 --- !u!61 &15933513
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5243,6 +5243,7 @@ MonoBehaviour:
   pannelwin: {fileID: 1095652266}
   maxHeal: 300
   healSlider: {fileID: 1988837606}
+  bg_Music: {fileID: 0}
   player: {fileID: 0}
 --- !u!61 &1286584666
 BoxCollider2D:

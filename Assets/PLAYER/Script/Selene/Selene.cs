@@ -29,7 +29,7 @@ public class Selene : MonoBehaviour
         }
 
         // Nếu đang trong hội thoại, người chơi có thể chuyển sang câu tiếp theo
-        if (dialoguePanel.activeSelf && Input.anyKeyDown)
+        if (dialoguePanel.activeSelf && Input.GetKeyDown(KeyCode.G))
         {
             if (dialogueText.text == dialogues[dialogueIndex])
             {
