@@ -34527,7 +34527,7 @@ Transform:
   m_GameObject: {fileID: 99382050}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.3125305, y: 7.1, z: -10.37}
+  m_LocalPosition: {x: 14.314058, y: 7.1, z: -10.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38344,7 +38344,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.3125305, y: 7.1, z: -10.37}
+  m_LocalPosition: {x: 14.314058, y: 7.1, z: -10.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47189,7 +47189,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: -295.71002}
+  m_AnchoredPosition: {x: 0.000061035156, y: -295.70996}
   m_SizeDelta: {x: -776.32, y: -993.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1474411273 stripped
@@ -54480,7 +54480,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -901.001, y: 462.07996}
+  m_AnchoredPosition: {x: -901.00104, y: 462.07996}
   m_SizeDelta: {x: -1836.56, y: -996.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808319744
@@ -54563,7 +54563,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -802.0005, y: 462.07996}
+  m_AnchoredPosition: {x: -802.00055, y: 462.07996}
   m_SizeDelta: {x: -1836.56, y: -996.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1811433192
@@ -55750,7 +55750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -697, y: 462.07996}
+  m_AnchoredPosition: {x: -697.00006, y: 462.07996}
   m_SizeDelta: {x: -1836.56, y: -996.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1975898969
@@ -57405,6 +57405,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2241256357598406690, guid: f7a69871cb1be3e4d89a822f144941d4,
+        type: 3}
+      propertyPath: fish
+      value: 
+      objectReference: {fileID: 1943579221}
     - target: {fileID: 2241256357598406690, guid: f7a69871cb1be3e4d89a822f144941d4,
         type: 3}
       propertyPath: watermelon

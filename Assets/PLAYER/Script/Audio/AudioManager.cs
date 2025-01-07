@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
         bgmSource.Play();
     }
     //Dung nhac nen
-    public void StopBackGroundMusic()
+    public void StopBackGroundMusic(AudioClip bg_Music)
     {
         bgmSource.Stop();
     }
