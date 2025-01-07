@@ -70,5 +70,5 @@ public class minibossnoastar : MonoBehaviour
         boss.speed = 3;
         
     }
-   
+    
 }

@@ -168,3 +168,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notification_Perfab: {fileID: 6750444478429669377, guid: 7d9148ac6d35339469f1a06bc2d7486c,
     type: 3}
+  getsound: {fileID: 8300000, guid: c44b27dc16a6d7a488fee51ade94fa45, type: 3}

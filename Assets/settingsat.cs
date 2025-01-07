@@ -1,22 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class settingsat : MonoBehaviour
 {
     public GameObject pannel;
+    public GameObject ss;
+    public settingsat _instan;
     public float lineOfSite = 2f;
    
     public Transform player;
     public bool check = false;
-
+    public int count = 0;
     private void Start()
     {
+
+       
         player = GameObject.FindGameObjectWithTag("Player").transform;
        
+
+
     }
     private void Update()
     {
+       
 
         float distancefromplayer = Vector2.Distance(player.position, transform.position);
         if (distancefromplayer < lineOfSite)

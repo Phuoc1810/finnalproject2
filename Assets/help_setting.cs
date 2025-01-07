@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEditor.SearchService;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -32,6 +29,6 @@ public class help_setting : MonoBehaviour
     }
     public void exit()
     {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(0);
     }
 }

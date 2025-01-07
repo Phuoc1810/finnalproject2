@@ -119,6 +119,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   firerate: 4
   nextfiretime: 0
+  hurtsound: {fileID: 8300000, guid: b9ea3699e8db5714e8225bf33b4419aa, type: 3}
 --- !u!95 &5762479698301490048
 Animator:
   serializedVersion: 5
@@ -245,6 +246,7 @@ MonoBehaviour:
   enemy: {fileID: 7586857468994097060}
   Point: {fileID: 0}
   chest_Perfab: {fileID: 0}
+  hurtsound: {fileID: 0}
 --- !u!114 &1183043316744607436
 MonoBehaviour:
   m_ObjectHideFlags: 0

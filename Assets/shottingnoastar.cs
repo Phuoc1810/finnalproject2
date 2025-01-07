@@ -16,6 +16,8 @@ public class shottingnoastar : MonoBehaviour
     public GameObject Point;
 
     public GameObject chest_Perfab;
+    [SerializeField] private AudioClip hurtsound;
+
     private void Start()
     {
         health = maxhealth;
@@ -70,5 +72,9 @@ public class shottingnoastar : MonoBehaviour
     {
 
         enemy.speed = 2;
+    }
+    public void Soundhurt()
+    {
+        AudioManager.instance.PlayOneShotAudio(hurtsound);
     }
 }

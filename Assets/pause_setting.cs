@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,9 +8,12 @@ public class pause_setting : MonoBehaviour
 {
    public GameObject pannelpause;
     public GameObject pannelsetting;
+    public GameObject panneluiplayer;
+    public GameObject pannelstat;
     public bool check = false;
     private void Update()
     {
+       
         if (Input.GetKeyDown(KeyCode.Escape)&&check==false)
         {
             pannelpause.SetActive(true);
@@ -30,9 +34,12 @@ public class pause_setting : MonoBehaviour
     }
     public void Quit()
     {
+        
+        pannelstat.SetActive(false);
         pannelpause.SetActive(false);
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(0);
         Time.timeScale = 1;
+      
     }
     public void setting()
     {

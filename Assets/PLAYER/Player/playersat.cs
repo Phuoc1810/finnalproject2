@@ -39,6 +39,8 @@ public class playersat : MonoBehaviour
     public TextMeshProUGUI pointstat;
     public int count = 0;
 
+    [Header("canvas")]
+    public GameObject canvas;
     void Start()
     {
         loadplayer();
@@ -54,6 +56,15 @@ public class playersat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "map 1" || scene.name == "Map01" || scene.name == "Map02" || scene.name == "Map03" || scene.name == "Map04" || scene.name == "Map05" || scene.name == "BossRoom01")
+        {
+            canvas.SetActive(true);
+        }
+        else if (scene.name == "menu" || scene.name == "help")
+        {
+            canvas.SetActive(false);
+        }
         pointstat.text = point.ToString();
         hpstat.fillAmount = maxhp / 1000;
         mpstat.fillAmount = maxmp / 1000;

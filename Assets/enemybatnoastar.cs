@@ -13,6 +13,7 @@ public class enemybatnoastar : MonoBehaviour
 
     public enemyfollowbat enemy;
     public GameObject Point;
+     [SerializeField] private AudioClip hurtsound;
     private void Start()
     {
         health = maxhealth;
@@ -66,5 +67,9 @@ public class enemybatnoastar : MonoBehaviour
     {
 
         enemy.speed = 2;
+    }
+    public void Soundhurt()
+    {
+        AudioManager.instance.PlayOneShotAudio(hurtsound);
     }
 }

@@ -15,12 +15,15 @@ public class minibossdamege : MonoBehaviour
     [SerializeField] private BoxCollider2D boxcollider;
     [SerializeField] private LayerMask playerlayer;
     private float cooldowntimer = Mathf.Infinity;
-    [SerializeField] private AudioClip attacksound;
+
     private Animator anim;
+  
+    [SerializeField] private AudioClip attacksound;
 
     private playersat playerhealth;
 
     [SerializeField] private enemypatrol enemypatroll;
+    [SerializeField] private AudioClip hurtsound;
 
     private void Awake()
     {
@@ -108,5 +111,13 @@ public class minibossdamege : MonoBehaviour
         {
             playerhealth.hurtss();
         }
+    }
+    public void SoundAttack1()
+    {
+        AudioManager.instance.PlayOneShotAudio(attacksound);
+    }
+    public void Soundhurt()
+    {
+        AudioManager.instance.PlayOneShotAudio(hurtsound);
     }
 }
