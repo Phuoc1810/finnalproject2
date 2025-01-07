@@ -157,7 +157,6 @@ MonoBehaviour:
   cameraDuration: 1.5
   bossTransform: {fileID: 1286584664}
   bossClip: {fileID: 8300000, guid: fad8f39f94c5dd549ac8ec51ff73ad29, type: 3}
-  bg_Music: {fileID: 8300000, guid: 55b85aa5f328e2b439657d32e19d8a68, type: 3}
 --- !u!61 &15933513
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5236,23 +5235,15 @@ MonoBehaviour:
   explosiveTilePerfab: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
     type: 3}
   animator: {fileID: 1286584662}
-  animatorPrefab: {fileID: 1701133505057203881, guid: 0600fce6ceb74ae459ce1ef517e9524a,
-    type: 3}
   tileSpawmInterval: 0.5
   numberOfTile: 8
   timeStart: 2.5
   spaceSpawn: 2
-<<<<<<< HEAD
   die: 0
   pannelwin: {fileID: 1095652266}
   maxHeal: 300
   healSlider: {fileID: 1988837606}
   player: {fileID: 0}
-=======
-  maxHeal: 300
-  healSlider: {fileID: 1988837606}
-  bg_Music: {fileID: 8300000, guid: 55b85aa5f328e2b439657d32e19d8a68, type: 3}
->>>>>>> tung
 --- !u!61 &1286584666
 BoxCollider2D:
   m_ObjectHideFlags: 0

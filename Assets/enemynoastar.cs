@@ -52,6 +52,7 @@ public class enemynoastar : MonoBehaviour
         health -= damge;
         if (health <= 0)
         {
+           
             
             anim.SetTrigger("die");     
             
@@ -62,17 +63,7 @@ public class enemynoastar : MonoBehaviour
     public void die()
     {
         Point.GetComponent<playersat>().point += 0.2f;
-        DropFish();
         Destroy(gameObject);
-    }
-
-    private void DropFish()
-    {
-        float randomValue = Random.Range(0f, 100f);
-        if(randomValue <= 35f)
-        {
-            Fish.instance.AddFish();
-        }
     }
     public void ngangchuyendong()
     {
