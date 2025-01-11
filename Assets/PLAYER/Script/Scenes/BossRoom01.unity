@@ -5242,6 +5242,7 @@ MonoBehaviour:
   die: 0
   pannelwin: {fileID: 1095652266}
   maxHeal: 300
+  specialSkill: {fileID: 653742815}
   healSlider: {fileID: 1988837606}
   bg_Music: {fileID: 0}
   player: {fileID: 0}
