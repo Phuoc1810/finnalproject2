@@ -27,6 +27,7 @@ public class BossController : MonoBehaviour
 
     //tham chieu den sprite nguoi choi
     private playersat playerStart;
+    [SerializeField] private AudioClip bg_Music; //nhac nen
 
    public GameObject player;
     //private bool isSpecialSkillColdDown = false;
@@ -47,6 +48,7 @@ public class BossController : MonoBehaviour
     }
     void Start()
     {
+        AudioManager.instance.PlayBackGroundMusic(bg_Music);
         currentHeal = maxHeal; //khoi tao mau cua boss
 
         if(healSlider != null )
@@ -125,7 +127,7 @@ public class BossController : MonoBehaviour
         }
     }
 
-  
+
     public void TakeDamage()
     {
         if (playerStart == null) return; // dam bao playerStarts khong null
@@ -155,29 +157,6 @@ public class BossController : MonoBehaviour
             Die();
             //specialSkill.SetActive(false);
         }
-        if (currentHeal <= maxHeal * 0.6f && currentHeal > maxHeal * 0.3f)
-        {
-            Debug.Log("phase2");
-            ChangePhase(PhaseTwoMachanic());
-        }
-        //giai doan 3 (khi mau <= 30%)
-        else if (currentHeal <= maxHeal * 0.3f && currentHeal > 0)
-        {
-            Debug.Log("phase3");
-            ChangePhase(PhareThreeMechanic());
-        }
-
-        if (currentHeal <= maxHeal * 0.6f && currentHeal > maxHeal * 0.3f)
-        {
-            Debug.Log("phase2");
-            ChangePhase(PhaseTwoMachanic());
-        }
-        //giai doan 3 (khi mau <= 30%)
-        else if (currentHeal <= maxHeal * 0.3f && currentHeal > 0)
-        {
-            Debug.Log("phase3");
-            ChangePhase(PhareThreeMechanic());
-        }
     }
 
 
@@ -189,71 +168,6 @@ private void ChangePhase(IEnumerator newPhase)
     }
     currentAttackCoroutine = StartCoroutine(newPhase); //bat dau pha moi
 }
-//giai doan 2
-private IEnumerator PhaseTwoMachanic()
-{
-    while (isAttacking)
-    {
-        yield return new WaitForSeconds(1); //delay truoc khi bat dau giai doan 2
-        animator.SetTrigger("Attack1");
-
-        //spawm cac o vuong xung quanh nguoi choi
-        for (int i = 0; i < numberOfTile; i++)
-        {
-            Vector3 ramdomOffset = Random.insideUnitCircle * spaceSpawn; //vi tri ngau nhien trong ban kinh spaceSpawn don vi xung quanh nguoi choi
-            Vector3 tilePosition = playerTransform.position + ramdomOffset;
-
-            //tao o vuong tai vi tri da tinh toan
-            GameObject tile = Instantiate(explosiveTilePerfab, tilePosition, Quaternion.identity);
-            tile.GetComponent<ExplosiveTile>().Initialize(playerTransform.position);
-        }
-        animator.SetTrigger("Indle");
-        yield return new WaitForSeconds(3);
-    }
-}
-
-//Giai doan 3
-private IEnumerator PhareThreeMechanic()
-{
-    while (isAttacking)
-    {
-        yield return new WaitForSeconds(1);
-        animator.SetTrigger("Attack1");
-
-        //lay toan bo san dau va xac dinh vung an toan
-        Vector3 arenaCenter = transform.position; //Gia dinh boss o giua san dau
-        float arenaSize = 6f; //gioi gan san dau 
-        int safeTile = 5; //so luong o vuong an toan
-
-        HashSet<Vector3> safeZones = new HashSet<Vector3>();
-        while (safeZones.Count < safeTile)
-        {
-            Vector3 safePosition = arenaCenter + new Vector3(
-                Random.Range(-arenaSize, arenaSize),
-                Random.Range(-arenaSize, arenaSize),
-                0
-            );
-            safeZones.Add(safePosition);
-        }
-
-        //spawn o vuong tren mat dat, ngoai tru vung an toan
-        for (float x = -arenaSize; x <= arenaSize; x += 1.5f)
-        {
-            for (float y = -arenaSize; y <= arenaSize; y += 1.5f)
-            {
-                Vector3 tilePoision = arenaCenter + new Vector3(x, y, 0);
-                if (!safeZones.Contains(tilePoision))
-                {
-                    GameObject tile = Instantiate(explosiveTilePerfab, tilePoision, Quaternion.identity);
-                    tile.GetComponent<ExplosiveTile>().Initialize(playerTransform.position);
-                }
-            }
-        }
-    }
-    animator.SetTrigger("Indle");
-    yield return new WaitForSeconds(3);
-}
-//ham giam mau cua boss
 
 private IEnumerator ChangeColorWhenDamaged()
     {

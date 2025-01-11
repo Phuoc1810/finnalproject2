@@ -50,7 +50,7 @@ public class Fish : MonoBehaviour
     }
     public void UseFish()
     {
-        if (currentFish > 0 && playerStats.currentmp < playerStats.maxmp) ;
+        if (currentFish > 0 && playerStats.currentmp < playerStats.maxmp)
         {
             currentFish--;
             playerStats.currentmp += manaAmount;
