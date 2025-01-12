@@ -229,7 +229,7 @@ public class playersat : MonoBehaviour
     {
         panneldie.SetActive(false);
         playerposition.transform.position = new Vector2(12.18f, 6.7f);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         anim.SetTrigger("live");
         Time.timeScale = 1;
         currenthp = maxhp;
