@@ -729,10 +729,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: "The Oracle \u0111\xE3 b\u1ECB g\u1EE5c ng\xE3. \xC1nh s\xE1ng hy v\u1ECDng
+    b\u1EEBng s\xE1ng tr\xEAn v\xF9ng \u0111\u1EA5t t\u1EEBng ch\xECm trong b\xF3ng
+    t\u1ED1i. Chuy\u1EBFn h\xE0nh tr\xECnh c\u1EE7a b\u1EA1n \u0111\xE3 tr\u1EDD
+    th\xE0nh huy\u1EC1n tho\u1EA1i."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f5fa4d694b296274db5ef76f6a671edf, type: 2}
+  m_sharedMaterial: {fileID: 2603050006323349592, guid: f5fa4d694b296274db5ef76f6a671edf,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -763,8 +767,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2128,7 +2132,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 2136275169
+  m_SortingLayerID: 1915072005
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &830186785
@@ -2562,7 +2566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1095652267
 RectTransform:
   m_ObjectHideFlags: 0
