@@ -20,7 +20,7 @@ public class BossController : MonoBehaviour
     //quan li chi so boss
     public int maxHeal = 200;
     private int currentHeal; //mau hien tai
-    //public GameObject specialSkill; //ki nang dac biet
+    public GameObject specialSkill; //ki nang dac biet
 
     //tham chieu den heal bar
     public Slider healSlider;
@@ -29,11 +29,11 @@ public class BossController : MonoBehaviour
     private playersat playerStart;
     [SerializeField] private AudioClip bg_Music; //nhac nen
 
-   public GameObject player;
-    //private bool isSpecialSkillColdDown = false;
+    public GameObject player;
+    private bool isSpecialSkillColdDown = false;
     //quan li trang thai tan cong
     private bool isAttacking = true;
-    private Coroutine currentAttackCoroutine;
+    
 
     //luu tru cac vi tri o vuong da spawn
     private HashSet<Vector3> spawnedTilePosition = new HashSet<Vector3>();
@@ -144,9 +144,9 @@ public class BossController : MonoBehaviour
         }
 
         //kich hoat ki nang dac biet khi mau <= 30%
-        //if(currentHeal <= maxHeal * 0.3 && !isSpecialSkillColdDown && specialSkill != null && !specialSkill.activeSelf)
+        if(currentHeal <= maxHeal * 0.3 && !isSpecialSkillColdDown && specialSkill != null && !specialSkill.activeSelf)
 
-        //StartCoroutine(ActivateSpecialSkill());
+        StartCoroutine(ActivateSpecialSkill());
 
 
         //kiem tra neu mau <= 0
@@ -159,15 +159,6 @@ public class BossController : MonoBehaviour
         }
     }
 
-
-private void ChangePhase(IEnumerator newPhase)
-{
-    if (currentAttackCoroutine != null)
-    {
-        StopCoroutine(currentAttackCoroutine); //dung coroutine hien tai
-    }
-    currentAttackCoroutine = StartCoroutine(newPhase); //bat dau pha moi
-}
 
 private IEnumerator ChangeColorWhenDamaged()
     {
@@ -182,17 +173,17 @@ private IEnumerator ChangeColorWhenDamaged()
     }
 
     //goi special skill
-    //private IEnumerator ActivateSpecialSkill()
-    //{
-       // specialSkill.SetActive(true);
-       // Debug.Log("special skill is active");
-        //yield return new WaitForSeconds(0.4f);
-       // specialSkill.SetActive(false);
+    private IEnumerator ActivateSpecialSkill()
+    {
+        specialSkill.SetActive(true);
+        Debug.Log("special skill is active");
+        yield return new WaitForSeconds(0.4f);
+        specialSkill.SetActive(false);
 
-        //isSpecialSkillColdDown = true;
-       // yield return new WaitForSeconds(4);
-       // isSpecialSkillColdDown = false;
-    //}
+        isSpecialSkillColdDown = true;
+        yield return new WaitForSeconds(4);
+        isSpecialSkillColdDown = false;
+    }
     //xu li logic khi boss chet
     private void Die()
     {
