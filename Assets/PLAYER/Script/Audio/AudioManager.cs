@@ -8,6 +8,11 @@ public class AudioManager : MonoBehaviour
    public static AudioManager instance;
     private AudioSource soundSource;
     private AudioSource musicSource;
+    
+    public AudioSource music2;
+    public AudioSource music3;
+    public AudioSource musicboss;
+    public AudioSource musicfinalboss;
     //tao mot reference den AudioSource
     private AudioSource audioSource;
     //Them AudiioSource rieng cho nhac nen
@@ -23,6 +28,10 @@ public class AudioManager : MonoBehaviour
     {
         soundSource = GetComponent<AudioSource>();
         musicSource =transform.GetChild(0).GetComponent<AudioSource>();
+        music2 = transform.GetChild(1).GetComponent<AudioSource>();
+        music3 = transform.GetChild(2).GetComponent<AudioSource>();
+        musicboss = transform.GetChild(3).GetComponent<AudioSource>();
+        musicfinalboss = transform.GetChild(4).GetComponent<AudioSource>();
         if (instance == null)
         {
             instance = this;
@@ -63,5 +72,9 @@ public class AudioManager : MonoBehaviour
     {
         float musicsound = music.value;
         musicSource.volume = musicsound;
+        music2.volume = musicsound;
+        music3.volume = musicsound;
+        musicboss.volume = musicsound;
+        musicfinalboss.volume = musicsound;
     }
 }

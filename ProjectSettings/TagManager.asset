@@ -17,6 +17,10 @@ TagManager:
   - pannelstat
   - pannel
   - stat
+  - room
+  - cave
+  - bosschest
+  - finaldoor
   layers:
   - Default
   - TransparentFX

@@ -22,7 +22,7 @@ public class RoomLock : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             StartCoroutine(NightBorne());
-            StartCoroutine(FuntionHide());
+            
         }
     }
 
@@ -33,11 +33,5 @@ public class RoomLock : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         nightBorne.SetActive(true);
     }
-    private IEnumerator FuntionHide()
-    {
-        yield return new WaitForSeconds(30);
-        Destroy(lockDoor);
-        unlockDoor.SetActive(true);
-        funtionWall.SetActive(false);
-    }
+  
 }

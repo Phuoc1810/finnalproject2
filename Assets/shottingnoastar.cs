@@ -43,8 +43,9 @@ public class shottingnoastar : MonoBehaviour
 
         if (health < 0)
         {
-            anim.SetTrigger("die");
             chest_Perfab.SetActive(true);
+            anim.SetTrigger("die");
+           
         }
         Debug.Log("takedamge");
     }
