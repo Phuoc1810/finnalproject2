@@ -15,6 +15,11 @@ public class minibossnoastar : MonoBehaviour
     public miniboss boss;
     public GameObject Point;
 
+    public GameObject room;
+    public GameObject lockDoor;
+    public GameObject unlockDoor;
+    public GameObject funtionWall;
+
     private void Start()
     {
 
@@ -42,7 +47,9 @@ public class minibossnoastar : MonoBehaviour
 
         if (health < 0)
         {
+            
             anim.SetTrigger("die");
+           
       
 
         }
@@ -60,6 +67,11 @@ public class minibossnoastar : MonoBehaviour
     }
     public void die()
     {
+        room.SetActive(false);
+        Destroy(lockDoor);
+        unlockDoor.SetActive(true);
+        funtionWall.SetActive(false);
+       
         chest_Perfab.SetActive(true);
         wall.SetActive(false);
         Point.GetComponent<playersat>().point += 2;

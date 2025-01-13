@@ -17,6 +17,8 @@ public class Selene : MonoBehaviour
     {
         dialoguePanel.SetActive(false);  // Ẩn hộp thoại khi bắt đầu
         ui_Contact.SetActive(false);
+        
+       
     }
 
     void Update()
