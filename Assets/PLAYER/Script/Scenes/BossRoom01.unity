@@ -331,6 +331,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -452,6 +457,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -654,6 +664,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -873,6 +888,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -952,6 +972,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1345,6 +1370,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1575,6 +1605,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1595,7 +1630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &653742816
 Transform:
   m_ObjectHideFlags: 0
@@ -1710,6 +1745,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1777,6 +1817,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2048,6 +2093,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2225,6 +2275,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2298,6 +2353,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2466,6 +2526,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2566,7 +2631,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1095652267
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2688,6 +2753,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2755,6 +2825,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4888,6 +4963,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5024,6 +5104,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5091,6 +5176,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5245,7 +5335,7 @@ MonoBehaviour:
   spaceSpawn: 2
   die: 0
   pannelwin: {fileID: 1095652266}
-  maxHeal: 300
+  maxHeal: 200
   specialSkill: {fileID: 653742815}
   healSlider: {fileID: 1988837606}
   bg_Music: {fileID: 0}
@@ -5763,6 +5853,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5836,6 +5931,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6011,6 +6111,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6078,6 +6183,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10899,6 +11009,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11048,6 +11163,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11116,6 +11236,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11183,6 +11308,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11341,6 +11471,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11415,6 +11550,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11482,6 +11622,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11968,6 +12113,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: square_explosion_sprite_sheet_0 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293801626626920611, guid: 0600fce6ceb74ae459ce1ef517e9524a,
+        type: 3}
+      propertyPath: m_TagString
+      value: fire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
