@@ -12,7 +12,7 @@ public class HPSTAT : MonoBehaviour
 
     private void Start()
     {
-       var hpplayer =player._instance.GetComponent<playersat>().maxhp;
+       var hpplayer =move._instance.GetComponent<playersat>().maxhp;
         hp.fillAmount = hpplayer / 1000;
     }
 }

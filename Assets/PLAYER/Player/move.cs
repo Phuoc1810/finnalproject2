@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class player : MonoBehaviour
+public class move : MonoBehaviour
 {
     Animator ani;
     bool trigger;
@@ -24,7 +24,7 @@ public class player : MonoBehaviour
     [SerializeField] private float speed;
     private Rigidbody2D rb;
     Animator anim;
-    public static player _instance;
+    public static move _instance;
 
     public string namescene;
     public string lastscene;
@@ -47,6 +47,10 @@ public class player : MonoBehaviour
     public Slider sliderstamina;
     public float stamina = 1;
     public float count = 0;
+   public float moveX;
+   public float moveY;
+
+    public bool canmove = true;
     
     void Start()
     {
@@ -80,77 +84,87 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if(stamina<1 && rollonce==false && attacking==false)
+       
+        if (canmove == true)
         {
-            if(count<=0 && stamina <=0 )
+            speed = 4;
+            if (stamina < 1 && rollonce == false && attacking == false)
             {
-                stamina -= 2f;
-                count += 1;
+                if (count <= 0 && stamina <= 0)
+                {
+                    stamina -= 2f;
+                    count += 1;
+                }
+                stamina += Time.deltaTime;
+                if (stamina > 0)
+                {
+                    count = 0;
+                }
             }
-            stamina += Time.deltaTime;
-            if(stamina>0)
+            sliderstamina.value = stamina;
+            Comboskill2();
+            Comboskill1();
+            Combo();
+            moveX = Input.GetAxis("Horizontal"); ;
+            moveY = Input.GetAxis("Vertical"); ;
+            //khuyen khich dung rigidbody de di chuyen
+            anim.SetFloat("lastmoveX", moveX);
+            anim.SetFloat("lastmoveY", moveY);
+
+            if (Input.GetKeyDown(KeyCode.Space) && rolltime <= 0 && stamina > 0 && rollonce == false)
             {
-                count = 0;
+                anim.SetBool("roll", true);
+                stamina -= 0.3f;
+                speed += rollboost;
+                rolltime = Rolltime;
+                rollonce = true;
+
             }
-        }
-        sliderstamina.value = stamina;
-        Comboskill2();
-        Comboskill1();
-        Combo();
-        var moveX = Input.GetAxis("Horizontal");
-        var moveY = Input.GetAxis("Vertical");
-        //khuyen khich dung rigidbody de di chuyen
-        anim.SetFloat("lastmoveX", moveX);
-        anim.SetFloat("lastmoveY", moveY);
 
-        if(Input.GetKeyDown(KeyCode.Space) && rolltime <= 0 && stamina > 0 && rollonce == false)
-        {
-            anim.SetBool("roll", true);
-            stamina -= 0.3f;
-            speed += rollboost;
-            rolltime = Rolltime;
-            rollonce = true;
-           
-        }
-
-        else if(rolltime<=0&&rollonce==true)
-        {
-            anim.SetBool("roll", false);
-            speed -= rollboost;
-            rollonce = false;
-            
-        }
-
-        else
-        {
-            rolltime -= Time.deltaTime;
-        }
-        if(Input.GetKey(KeyCode.LeftShift))
-        rb.velocity = new Vector2(moveX, moveY) * rspeed;
-
-        else
-          rb.velocity = new Vector2(moveX, moveY) * speed;
-        
-        if (moveX >= 0.1 || moveX <= -0.1 || moveY >= 0.1 || moveY <= -0.1)
-        {
-            anim.SetFloat("moveX", moveX);
-            anim.SetFloat("moveY", moveY);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if(watermelon != null)
+            else if (rolltime <= 0 && rollonce == true)
             {
-                watermelon.UseWatermelon();
+                anim.SetBool("roll", false);
+                speed -= rollboost;
+                rollonce = false;
+
+            }
+
+            else
+            {
+                rolltime -= Time.deltaTime;
+            }
+            if (Input.GetKey(KeyCode.LeftShift))
+                rb.velocity = new Vector2(moveX, moveY) * rspeed;
+
+            else
+                rb.velocity = new Vector2(moveX, moveY) * speed;
+
+            if (moveX >= 0.1 || moveX <= -0.1 || moveY >= 0.1 || moveY <= -0.1)
+            {
+                anim.SetFloat("moveX", moveX);
+                anim.SetFloat("moveY", moveY);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                if (watermelon != null)
+                {
+                    watermelon.UseWatermelon();
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                if (fish != null)
+                {
+                    fish.UseFish();
+                }
             }
         }
-        if (Input.GetKeyDown(KeyCode.R))
+    else
         {
-            if (fish != null)
-            {
-                fish.UseFish();
-            }
+            moveX = 0;
+            moveY = 0;
+            speed = 0;
         }
     }
     public void Combo()

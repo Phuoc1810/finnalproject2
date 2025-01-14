@@ -29,6 +29,10 @@ public class KeyManager : MonoBehaviour
         totalKeys++;
         UpdateUI();
     }
+    private void Update()
+    {
+        UpdateUI();
+    }
     //cap nhat text UI hien thi so chia khoa
     public void UpdateUI()
     {

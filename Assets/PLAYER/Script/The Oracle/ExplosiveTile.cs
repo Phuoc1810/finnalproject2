@@ -79,7 +79,7 @@ public class ExplosiveTile : MonoBehaviour
             var playerStats = collision.GetComponent<playersat>();
             if (playerStats != null)
             {
-                playerStats.currenthp -= Mathf.Max(damage - playerStats.defent, 0);//sat thuong co tinh phong thu
+                playerStats.hurtss();//sat thuong co tinh phong thu
                 if (playerStats.currenthp <= 0)
                 {
                     Debug.Log("Player is defeated!");

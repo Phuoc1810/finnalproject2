@@ -24,15 +24,15 @@ public class playermaneger : MonoBehaviour
     }
     public void setuphpmp()
     {
-        hpSlider.maxValue = player._instance.GetComponent<playersat>().maxhp;
-        mpSlider.maxValue = player._instance.GetComponent<playersat>().maxmp;
+        hpSlider.maxValue = move._instance.GetComponent<playersat>().maxhp;
+        mpSlider.maxValue = move._instance.GetComponent<playersat>().maxmp;
         updatehpmp();
 
     }
   
     public void updatehpmp()
     {
-        hpSlider.value = player._instance.GetComponent<playersat>().currenthp;
-        mpSlider.value = player._instance.GetComponent<playersat>().currentmp;
+        hpSlider.value = move._instance.GetComponent<playersat>().currenthp;
+        mpSlider.value = move._instance.GetComponent<playersat>().currentmp;
     }
 }

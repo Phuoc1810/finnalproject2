@@ -12,9 +12,9 @@ public class cong : MonoBehaviour
 
     void Start()
     {
-        if (player._instance != null && player._instance.namescene == fromscene && player._instance.lastscene == toscene)
+        if (move._instance != null && move._instance.namescene == fromscene && move._instance.lastscene == toscene)
         {
-            player._instance.transform.position = transform.position + Vector3.one;
+            move._instance.transform.position = transform.position + Vector3.one;
         }
     }
 
@@ -29,8 +29,8 @@ public class cong : MonoBehaviour
         {
 
             SceneManager.LoadScene(toscene);
-            player._instance.namescene = toscene;
-            player._instance.lastscene = fromscene;
+            move._instance.namescene = toscene;
+            move._instance.lastscene = fromscene;
         }
     }
 }

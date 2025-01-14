@@ -41,6 +41,7 @@ public class playersat : MonoBehaviour
 
     [Header("canvas")]
     public GameObject canvas;
+    public move Playermove;
     void Start()
     {
         loadplayer();
@@ -56,6 +57,7 @@ public class playersat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Playermove = GetComponent<move>();
         Scene scene = SceneManager.GetActiveScene();
         if (scene.name == "map 1" || scene.name == "Map01" || scene.name == "Map02" || scene.name == "Map03" || scene.name == "Map04" || scene.name == "Map05" || scene.name == "BossRoom01")
         {
@@ -91,6 +93,7 @@ public class playersat : MonoBehaviour
         }
         if(currenthp<0 && count==0)
         {
+            move._instance.canmove = false;
             count++;
             anim.SetTrigger("die");
         }
@@ -120,10 +123,10 @@ public class playersat : MonoBehaviour
     {
         anim.SetTrigger("hurt");
         var firedamge = 20;
-        var playerdef = player._instance.GetComponent<playersat>().defent;//chi so phong thu cua player
+        var playerdef = move._instance.GetComponent<playersat>().defent;//chi so phong thu cua player
         var damage = firedamge - playerdef;//can bang game
         if (damage < 0) damage = 0;
-        player._instance.GetComponent<playersat>().currenthp -= damage;
+        move._instance.GetComponent<playersat>().currenthp -= damage;
 
     }
     public void uphp()
@@ -222,11 +225,16 @@ public class playersat : MonoBehaviour
     }
     public void die()
     {
+       
+        
         panneldie.SetActive(true);
         Time.timeScale = 0;
+        
     }
     public void restar()
     {
+        KeyManager.instance.totalKeys = 0;
+        move._instance.canmove = true;
         panneldie.SetActive(false);
         playerposition.transform.position = new Vector2(12.18f, 6.7f);
         SceneManager.LoadScene(1);
