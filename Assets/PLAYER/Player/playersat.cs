@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class playersat : MonoBehaviour
 {
     [Header("stat")]
+    public GameObject musicboss;
+    public GameObject music1;
     public float point = 2;
     public float maxhp = 100;
     public float currenthp = 100;
@@ -233,6 +235,8 @@ public class playersat : MonoBehaviour
     }
     public void restar()
     {
+        musicboss.SetActive(false);
+        music1.SetActive(true);
         KeyManager.instance.totalKeys = 0;
         move._instance.canmove = true;
         panneldie.SetActive(false);

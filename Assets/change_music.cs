@@ -33,7 +33,7 @@ public class change_music : MonoBehaviour
         }
         else if (collision.CompareTag("finaldoor"))
         {
-            musicboss.SetActive(false);
+            music3.SetActive(false);
             musicfinalboss.SetActive(true);
         }
     }
