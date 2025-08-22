@@ -9,7 +9,7 @@ public class win : MonoBehaviour
     {
         Time.timeScale = 1;
         pannelwin.SetActive(false);
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(0);
         Time.timeScale = 1;
     }
 }
