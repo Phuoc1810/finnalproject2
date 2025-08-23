@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -44,6 +44,21 @@ public class playersat : MonoBehaviour
     [Header("canvas")]
     public GameObject canvas;
     public move Playermove;
+
+    public playersat() { } // Constructor mặc định
+
+    public playersat(PlayerData data) // Constructor với tham số PlayerData
+    {
+        point = data.point;
+        maxhp = data.maxHp;
+        maxmp = data.maxMp;
+        currenthp = data.currenthp;
+        currentmp = data.currentmp;
+        defent = data.defent;
+        attack = data.attack;
+        skill = data.skill;
+    }
+
     void Start()
     {
         loadplayer();
@@ -257,15 +272,17 @@ public class playersat : MonoBehaviour
     public void loadplayer()
 
     {
-        sat data = savesytem.loadplayer();
-        point = data.point;
-        maxhp = data.maxhp;
-        currenthp = data.currenthp;
-        currentmp = data.currentmp;
-        maxmp = data.maxmp;
-        defent = data.defent;
-        attack = data.attack;
-        skill = data.skill;
-
+        PlayerData data = savesytem.LoadPlayer();
+        if(data != null)
+        {
+            point = data.point;
+            maxhp = data.maxHp;
+            maxmp = data.maxMp;
+            currenthp = data.currenthp;
+            currentmp = data.currentmp;
+            defent = data.defent;
+            attack = data.attack;
+            skill = data.skill;
+        }
     }
 }
