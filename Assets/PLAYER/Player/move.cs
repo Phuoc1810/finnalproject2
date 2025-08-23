@@ -1,5 +1,7 @@
 
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -84,7 +86,20 @@ public class move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        // ... other using statements
+
+        // In Update() method, replace:
+        // if(Scene.name == "menu")
+
+        if (SceneManager.sceneCount == 0)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(true);
+        }
+
         if (canmove == true)
         {
             speed = 4;
@@ -160,7 +175,7 @@ public class move : MonoBehaviour
                 }
             }
         }
-    else
+        else
         {
             moveX = 0;
             moveY = 0;

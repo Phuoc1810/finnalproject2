@@ -25,4 +25,8 @@ public class menu_setting : MonoBehaviour
     {
         SceneManager.LoadScene(8);
     }    
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

@@ -245,6 +245,7 @@ public class playersat : MonoBehaviour
         anim.SetTrigger("live");
         Time.timeScale = 1;
         currenthp = maxhp;
+        currentmp = maxmp;
         count = 0;
     }
     public void savePlayer()
